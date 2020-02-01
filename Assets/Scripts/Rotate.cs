@@ -17,14 +17,19 @@ public class Rotate : MonoBehaviour
     public bool inRange2;
     public bool inRange3;
     public bool inRange4;
+    public GameObject closeButton;
 
-    AudioSource audioData;
+    AudioSource unlockSound;
+    AudioSource wiggleSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        closeButton.SetActive(false);
         sweetSpot = GetSweetSpot();
-        audioData = GetComponent<AudioSource>();
+        var audioSources = GetComponents<AudioSource>();
+        unlockSound = audioSources[0];
+        wiggleSound = audioSources[1];
     }
 
     // Update is called once per frame
@@ -43,8 +48,8 @@ public class Rotate : MonoBehaviour
             if (!unlocked)
             {
                 RotateLockCounterClockwise();
+                RotateCenter();
             }
-            RotateCenter();
         }
     }
 
@@ -63,7 +68,8 @@ public class Rotate : MonoBehaviour
                 if (keyhole.transform.rotation.eulerAngles.z == 270)
                 {
                     unlocked = true;
-                    audioData.Play();
+                    unlockSound.Play();
+                    closeButton.SetActive(true);
                 }
             }
         }
@@ -81,6 +87,10 @@ public class Rotate : MonoBehaviour
             }
             else if ((angle > 0 && angle <= 290) && !unlocked)
             {
+                if (!wiggleSound.isPlaying)
+                {
+                    wiggleSound.Play();
+                }
                 transform.localEulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + (float)Math.Sin(DateTime.Now.Millisecond));
             }
 
@@ -98,6 +108,10 @@ public class Rotate : MonoBehaviour
             }
             else if ((angle > 0 && angle <= 315) && !unlocked)
             {
+                if (!wiggleSound.isPlaying)
+                {
+                    wiggleSound.Play();
+                }
                 transform.localEulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + (float)Math.Sin(DateTime.Now.Millisecond));
             }
 
@@ -115,6 +129,21 @@ public class Rotate : MonoBehaviour
             }
             else if ((angle > 0 && angle <= 330) && !unlocked)
             {
+                if (!wiggleSound.isPlaying)
+                {
+                    wiggleSound.Play();
+                }
+                transform.localEulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + (float)Math.Sin(DateTime.Now.Millisecond));
+            }
+        }
+        else
+        {
+            if (!unlocked)
+            {
+                if (!wiggleSound.isPlaying)
+                {
+                    wiggleSound.Play();
+                }
                 transform.localEulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + (float)Math.Sin(DateTime.Now.Millisecond));
             }
         }
