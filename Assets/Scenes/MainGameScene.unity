@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1017477156}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,12 +425,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2285411e7fc8fb74d891ff45428e5208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1.5
-  myCamera: {fileID: 519420031}
-  NE: {fileID: 21300000, guid: ae7aa2afb0e8bdf43a50a31d48dda4d7, type: 3}
-  NW: {fileID: 21300000, guid: b961f52d349f6b04dab08cba0f51729b, type: 3}
-  SE: {fileID: 21300000, guid: 4c20607d94d48254784c354c0192acaa, type: 3}
-  SW: {fileID: 21300000, guid: 276db362c9cef2749a8e5eb0f6e3d3f9, type: 3}
+  PlayerSpeed: 1.5
+  Camera: {fileID: 0}
+  NorthEast: {fileID: 0}
+  NorthWest: {fileID: 0}
+  SouthEast: {fileID: 0}
+  SouthWest: {fileID: 0}
 --- !u!50 &1222248701
 Rigidbody2D:
   serializedVersion: 4
