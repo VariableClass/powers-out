@@ -30,7 +30,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     #region Member Variables
 
     private SpriteRenderer spriteRenderer;
-    private GameObject grid;
 
     #endregion
     #region Methods
@@ -39,13 +38,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     {
         // Get game object components
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Get grid object
-        grid = GameObject.FindGameObjectWithTag("Grid"); 
-        if (!grid)
-        {
-            throw new Exception("No grid found");
-        }
     }
 
     private Vector2? GetHeading(Vector3 mousePosition, Vector3 characterPosition)
