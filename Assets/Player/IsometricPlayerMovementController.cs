@@ -9,7 +9,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     public Camera myCamera;
     //IsometricCharacterRenderer isoRenderer;
     SpriteRenderer sprite;
-    public GameObject gridObject;
     public Sprite NE;
     public Sprite NW;
     public Sprite SE;
@@ -22,11 +21,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         //isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         sprite = GetComponent<SpriteRenderer>();
-        gridObject = GameObject.FindGameObjectWithTag("Grid"); 
-        if (!gridObject)
-        {
-            print("Cannot find Grid."); 
-        }
     }
 
 
