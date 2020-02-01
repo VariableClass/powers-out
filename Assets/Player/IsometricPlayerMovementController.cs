@@ -25,12 +25,14 @@ public class IsometricPlayerMovementController : MonoBehaviour
     public Sprite SouthEast;
     public Sprite SouthWest;
 
+    public GameObject flashLight;
+    public GameObject characterLight;
+
     #endregion
 
     #region Member Variables
 
     private SpriteRenderer spriteRenderer;
-    private GameObject grid;
 
     #endregion
     #region Methods
@@ -39,13 +41,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     {
         // Get game object components
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Get grid object
-        grid = GameObject.FindGameObjectWithTag("Grid"); 
-        if (!grid)
-        {
-            throw new Exception("No grid found");
-        }
     }
 
     private Vector2? GetHeading(Vector3 mousePosition, Vector3 characterPosition)
@@ -145,6 +140,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
             // Set the appropriate character sprite for the given bearing
             spriteRenderer.sprite = GetSpriteForBearing(bearing);
+
+            flashLight.transform.up = isometricHeading.Value;
+            characterLight.transform.up = isometricHeading.Value;
+            characterLight.transform.Rotate(new Vector3(0, 0, 1), 180);
 
             // Move the character
             transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
