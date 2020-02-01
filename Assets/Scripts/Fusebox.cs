@@ -6,6 +6,7 @@ public class Fusebox : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GlobalGameData globalGameData;
 
+    public Sprite FuseboxClosed;
     public Sprite FuseboxNoFuses;
     public Sprite FuseboxOneFuse;
     public Sprite FuseboxTwoFuses;
@@ -27,7 +28,11 @@ public class Fusebox : MonoBehaviour
     void Update()
     {
         Sprite candidateSprite;
-        if (globalGameData.bulbsInstalled == 1)
+        if (!globalGameData.keyGotten)
+        {
+            candidateSprite = FuseboxClosed;
+        }
+        else if (globalGameData.bulbsInstalled == 1)
         {
             candidateSprite = FuseboxOneFuse;
         }
