@@ -59,8 +59,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-*.png.meta 
-*Tiles.meta
+*.png.meta
 *cs.meta
-*Player.meta
-*.asset.meta
