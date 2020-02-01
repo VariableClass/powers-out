@@ -9,15 +9,12 @@ public class GlobalGameData : MonoBehaviour
     public int snakeHighScore;
     public bool radioFixed;
     public bool powerFixed;
+    public int bulbsCollected;
+    public int bulbsInstalled;
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        keyGotten = false;
-        snakeHighScore = 0;
-        radioFixed = false;
-        powerFixed = false;
-
         print("init global data");
     }
 

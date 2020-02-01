@@ -156,6 +156,7 @@ MonoBehaviour:
   Camera: {fileID: 1863703924}
   FuseOff: {fileID: 21300000, guid: a3a1dcad26eb24e3895633c62154b96d, type: 3}
   FuseOn: {fileID: 21300000, guid: 37a0ce7feb4184035a0386baafcd4bf3, type: 3}
+  BulbId: 1
 --- !u!212 &833860500
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -251,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103977524}
   - component: {fileID: 1103977523}
+  - component: {fileID: 1103977525}
   m_Layer: 0
   m_Name: Fusebox
   m_TagString: Untagged
@@ -322,6 +324,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1103977525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103977522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890ecd68107b8482d8f1bc373862a91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FuseboxNoFuses: {fileID: 21300000, guid: 98ba7d88cf40f4f3fad7c283434c1f8d, type: 3}
+  FuseboxOneFuse: {fileID: 21300000, guid: a218db91628204a80994741885c4f3d9, type: 3}
+  FuseboxTwoFuses: {fileID: 21300000, guid: aaaed9ffda01142b4b73091f18f32426, type: 3}
+  FuseboxThreeFuses: {fileID: 21300000, guid: 8194f4590765e47fcb78d74c979c8b9a, type: 3}
+  FuseboxFourFuses: {fileID: 21300000, guid: d944a29d3365948349a84b52b8f819fc, type: 3}
 --- !u!1 &1392917126
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +397,7 @@ MonoBehaviour:
   Camera: {fileID: 1863703924}
   FuseOff: {fileID: 21300000, guid: a3a1dcad26eb24e3895633c62154b96d, type: 3}
   FuseOn: {fileID: 21300000, guid: 37a0ce7feb4184035a0386baafcd4bf3, type: 3}
+  BulbId: 3
 --- !u!212 &1392917129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -498,6 +518,7 @@ MonoBehaviour:
   Camera: {fileID: 1863703924}
   FuseOff: {fileID: 21300000, guid: a3a1dcad26eb24e3895633c62154b96d, type: 3}
   FuseOn: {fileID: 21300000, guid: 37a0ce7feb4184035a0386baafcd4bf3, type: 3}
+  BulbId: 4
 --- !u!212 &1859202101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -573,6 +594,7 @@ GameObject:
   - component: {fileID: 1863703925}
   - component: {fileID: 1863703924}
   - component: {fileID: 1863703923}
+  - component: {fileID: 1863703927}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -645,6 +667,87 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863703927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863703922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_CameraOutput: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!1 &2059359520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059359521}
+  - component: {fileID: 2059359522}
+  m_Layer: 0
+  m_Name: GlobalGameObject
+  m_TagString: GlobalData
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2059359521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059359520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.058619, y: 1.5734196, z: -16.64435}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059359522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059359520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc8b486ce6ac48459d28ed40e9425ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyGotten: 0
+  playerPos: {x: 0, y: 0, z: 0}
+  snakeHighScore: 0
+  radioFixed: 0
+  powerFixed: 0
+  bulbsCollected: 2
+  bulbsInstalled: 1
 --- !u!1 &2095634418
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +804,7 @@ MonoBehaviour:
   Camera: {fileID: 1863703924}
   FuseOff: {fileID: 21300000, guid: a3a1dcad26eb24e3895633c62154b96d, type: 3}
   FuseOn: {fileID: 21300000, guid: 37a0ce7feb4184035a0386baafcd4bf3, type: 3}
+  BulbId: 2
 --- !u!212 &2095634421
 SpriteRenderer:
   m_ObjectHideFlags: 0

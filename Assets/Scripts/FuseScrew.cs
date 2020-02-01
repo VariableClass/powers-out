@@ -9,18 +9,43 @@ public class FuseScrew : MonoBehaviour
     public Camera Camera;
     public Sprite FuseOff;
     public Sprite FuseOn;
+    public int BulbId;
 
     #endregion
 
     #region Member Variables
 
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rigidBody;
+    private GlobalGameData globalGameData;
     private float degreesRotation;
     private bool screwedIn;
 
     #endregion
 
     #region Methods
+
+    private void Awake()
+    {
+        // Get game object components
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
+
+        // Get global game data
+        var globalGameDataGameObject = GameObject.FindGameObjectWithTag("GlobalData");
+        globalGameData = globalGameDataGameObject.GetComponent<GlobalGameData>();
+
+        if (globalGameData.bulbsCollected < BulbId)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (globalGameData.bulbsInstalled >= BulbId)
+        {
+            ScrewInFuse(false);
+        }
+    }
 
     private void Update()
     {
@@ -33,35 +58,21 @@ public class FuseScrew : MonoBehaviour
 
             if (degreesRotation > 50000)
             {
-                screwedIn = true;
-            }
-
-            if (screwedIn)
-            {
-                spriteRenderer.sprite = FuseOn;
-                var rigidBody = gameObject.GetComponent<Rigidbody2D>();
-                rigidBody.freezeRotation = screwedIn;
+                ScrewInFuse();
             }
         }
     }
 
-    private void Awake()
+    private void ScrewInFuse(bool newBulb = true)
     {
-        // Get game object components
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        screwedIn = true;
+        spriteRenderer.sprite = FuseOn;
+        rigidBody.freezeRotation = true;
 
-    private Vector3 GetHeading(Vector3 mousePosition, Vector3 bulbPosition)
-    {
-        var x = mousePosition.x - bulbPosition.x;
-        var y = mousePosition.y - bulbPosition.y;
-
-        return new Vector3(x, y);
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+        if (newBulb)
+        {
+            globalGameData.bulbsInstalled++;
+        }
     }
 
     #endregion
