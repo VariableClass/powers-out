@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class GlobalGameData : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GlobalGameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     public void LoadScene(string sceneName)
@@ -31,3 +32,4 @@ public class GlobalGameData : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 }
+
