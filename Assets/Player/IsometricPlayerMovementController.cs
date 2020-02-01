@@ -27,6 +27,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
     public GameObject flashLight;
     public GameObject characterLight;
+    public GlobalGameData globalData;
 
     #endregion
 
@@ -35,12 +36,22 @@ public class IsometricPlayerMovementController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     #endregion
-    #region Methods
 
+    #region Methods
     private void Awake()
     {
         // Get game object components
         spriteRenderer = GetComponent<SpriteRenderer>();
+        globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalGameData>();
+    }
+
+    private void Start()
+    {
+        var temp = new Vector3(0, 0, 0);
+        if(globalData.playerPos != temp)
+        {
+            transform.position = globalData.playerPos;
+        }
     }
 
     private Vector2? GetHeading(Vector3 mousePosition, Vector3 characterPosition)

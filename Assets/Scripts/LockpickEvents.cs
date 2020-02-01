@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LockpickEvents : MonoBehaviour
 {
+    public GlobalGameData globalData;
+
+    public void Awake()
+    {
+        globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalGameData>();
+    }
+
     public void Exit()
     {
-        print("Clicked exit");
-        //SceneManager.LoadScene(0);
+        if(globalData.keyGotten)
+        {
+            SceneManager.LoadScene("MainGameScene");
+        }
     }
 }
