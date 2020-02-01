@@ -6,7 +6,6 @@ using UnityEngine;
 public class IsometricPlayerMovementController : MonoBehaviour
 {
     #region Enums
-
     private enum Bearing
     {
         NorthEast,
@@ -34,7 +33,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     private GameObject grid;
 
     #endregion
-
     #region Methods
 
     private void Awake()
@@ -152,6 +150,5 @@ public class IsometricPlayerMovementController : MonoBehaviour
             transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
         }
     }
-
     #endregion
 }
