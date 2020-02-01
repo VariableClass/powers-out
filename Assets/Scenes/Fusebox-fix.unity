@@ -299,7 +299,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98ba7d88cf40f4f3fad7c283434c1f8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 971b2c1409d494a149999713a0cd38e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890ecd68107b8482d8f1bc373862a91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FuseboxClosed: {fileID: 21300000, guid: 971b2c1409d494a149999713a0cd38e7, type: 3}
   FuseboxNoFuses: {fileID: 21300000, guid: 98ba7d88cf40f4f3fad7c283434c1f8d, type: 3}
   FuseboxOneFuse: {fileID: 21300000, guid: a218db91628204a80994741885c4f3d9, type: 3}
   FuseboxTwoFuses: {fileID: 21300000, guid: aaaed9ffda01142b4b73091f18f32426, type: 3}
@@ -741,13 +742,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc8b486ce6ac48459d28ed40e9425ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyGotten: 0
+  keyGotten: 1
   playerPos: {x: 0, y: 0, z: 0}
   snakeHighScore: 0
   radioFixed: 0
   powerFixed: 0
-  bulbsCollected: 2
-  bulbsInstalled: 1
+  bulbsCollected: 0
+  bulbsInstalled: 0
+  masterVolume: 0
 --- !u!1 &2095634418
 GameObject:
   m_ObjectHideFlags: 0
