@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
@@ -6,7 +7,10 @@ public class Movement : MonoBehaviour
     public LayerMask groundLayers;
     public float moveSpeed;
     public float jumpPower;
-    float targetMoveSpeed;
+    public float targetMoveSpeed;
+    public bool movingBackwards = false;
+    public AnimationClip runAnimation;
+    public AnimationClip jumpAnimation;
 
     bool grounded;
 
@@ -16,6 +20,50 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        // Get renderer & animator
+        var renderer = gameObject.GetComponent<SpriteRenderer>();
+        var animator = gameObject.GetComponent<Animator>();
+        var animation = gameObject.GetComponent<Animation>();
+        var collider = gameObject.GetComponent<BoxCollider2D>();
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
+        {
+            ChangeAnimation(animator, jumpAnimation);
+            animator.StopPlayback();
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            ChangeAnimation(animator, runAnimation);
+            animator.StopPlayback();
+            movingBackwards = true;
+            renderer.flipX = movingBackwards;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            ChangeAnimation(animator, runAnimation);
+            animator.StopPlayback();
+            movingBackwards = false;
+            renderer.flipX = movingBackwards;
+
+        }
+        else
+        {
+            animator.StartPlayback();
+        }
+
+
+    }
+
+    private void ChangeAnimation(Animator animator, AnimationClip animationClip)
+    {
+        var aoc = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        var anims = new List<KeyValuePair<AnimationClip, AnimationClip>>();
+        foreach (var a in aoc.animationClips)
+        {
+            anims.Add(new KeyValuePair<AnimationClip, AnimationClip>(a, animationClip));
+        }
+        aoc.ApplyOverrides(anims);
+        animator.runtimeAnimatorController = aoc;
     }
 
     void FixedUpdate()
@@ -33,6 +81,15 @@ public class Movement : MonoBehaviour
         }
 
         rigidbody.velocity = new Vector2(targetMoveSpeed, rigidbody.velocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("ground", System.StringComparison.OrdinalIgnoreCase))
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            ChangeAnimation(animator, runAnimation);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
