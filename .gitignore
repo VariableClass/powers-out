@@ -60,3 +60,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 *.png.meta 
+*Tiles.meta
+*cs.meta
+*Player.meta
+*.asset.meta
