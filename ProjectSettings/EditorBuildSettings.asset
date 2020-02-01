@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nokia-snake.unity
     guid: 36915ee8652830343ac9c058cfde011b
+  - enabled: 1
+    path: Assets/Scenes/Lockpicker.unity
+    guid: ced87807cc852424fac0f1c53d381d14
   m_configObjects: {}

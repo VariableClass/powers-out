@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class Rotate : MonoBehaviour
 {
+    public GlobalGameData globalData;
     public bool unlocked = false;
     public int wiggleRoom = 20;
     public GameObject keyhole;
@@ -28,15 +30,11 @@ public class Rotate : MonoBehaviour
         closeButton.SetActive(false);
         sweetSpot = GetSweetSpot();
         var audioSources = GetComponents<AudioSource>();
+        globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalGameData>();
         unlockSound = audioSources[0];
         wiggleSound = audioSources[1];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    
     private void FixedUpdate()
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
@@ -68,6 +66,7 @@ public class Rotate : MonoBehaviour
                 if (keyhole.transform.rotation.eulerAngles.z == 270)
                 {
                     unlocked = true;
+                    globalData.keyGotten = true;
                     unlockSound.Play();
                     closeButton.SetActive(true);
                 }

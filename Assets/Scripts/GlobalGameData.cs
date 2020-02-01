@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 
 public class GlobalGameData : MonoBehaviour
 {
-    public bool keyGotten;
     public Vector3 playerPos;
     public int snakeHighScore;
+    public bool keyGotten;
     public bool radioFixed;
     public bool powerFixed;
 
@@ -25,11 +26,6 @@ public class GlobalGameData : MonoBehaviour
     void Start()
     {
     
-    }
-
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }
 
