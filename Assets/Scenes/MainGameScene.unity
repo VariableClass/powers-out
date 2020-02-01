@@ -426,11 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSpeed: 1.5
-  Camera: {fileID: 0}
-  NorthEast: {fileID: 0}
-  NorthWest: {fileID: 0}
-  SouthEast: {fileID: 0}
-  SouthWest: {fileID: 0}
+  Camera: {fileID: 519420031}
+  NorthEast: {fileID: 21300000, guid: 792af88c0448b004ea03bdf0b218418b, type: 3}
+  NorthWest: {fileID: 21300000, guid: 14dec03aadbcad341929b9fcce6283e4, type: 3}
+  SouthEast: {fileID: 21300000, guid: 792af88c0448b004ea03bdf0b218418b, type: 3}
+  SouthWest: {fileID: 21300000, guid: 14dec03aadbcad341929b9fcce6283e4, type: 3}
 --- !u!50 &1222248701
 Rigidbody2D:
   serializedVersion: 4
