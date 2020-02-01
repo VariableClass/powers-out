@@ -80,7 +80,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
         var x = heading.x > 0 ? 1 : -1;
         var y = heading.y > 0 ? 1 : -1;
 
-        return new Vector2(x, y);
+        // Multiply in order to get correct isometric behaviour for games
+        return new Vector2(x*2, y);
     }
 
     private Bearing GetBearing(Vector2 heading)

@@ -10,15 +10,15 @@ public class GlobalGameData : MonoBehaviour
     public bool keyGotten;
     public bool radioFixed;
     public bool powerFixed;
+    public int bulbsCollected;
+    public int bulbsInstalled;
+
+    [Range(0, 50)]
+    public int masterVolume;
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        keyGotten = false;
-        snakeHighScore = 0;
-        radioFixed = false;
-        powerFixed = false;
-
         print("init global data");
     }
 
@@ -26,6 +26,16 @@ public class GlobalGameData : MonoBehaviour
     void Start()
     {
     
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void SetVolume(int value)
+    {
+        AudioListener.volume = (float)value;
     }
 }
 
