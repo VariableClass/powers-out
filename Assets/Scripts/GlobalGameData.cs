@@ -10,6 +10,9 @@ public class GlobalGameData : MonoBehaviour
     public bool radioFixed;
     public bool powerFixed;
 
+    [Range(0, 50)]
+    public int masterVolume;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -30,6 +33,11 @@ public class GlobalGameData : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void SetVolume(int value)
+    {
+        AudioListener.volume = (float)value;
     }
 }
 
