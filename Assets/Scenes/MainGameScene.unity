@@ -649,16 +649,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222248699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d407a92c727be459ce07c14dfc7a24, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bd381148ec3ff441a81efc8df9445cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 1.5
   myCamera: {fileID: 519420031}
   gridObject: {fileID: 0}
-  NE: {fileID: 21300000, guid: 0147aee2588383b42a0a7949ae568a90, type: 3}
-  NW: {fileID: 21300000, guid: 44c1ab1dcf35210498bd320571f45d23, type: 3}
-  SE: {fileID: 21300000, guid: 1334565f3d25633408fe4f7469dde56d, type: 3}
-  SW: {fileID: 21300000, guid: 2ba62fbc4c1362b4fa4ee332eca3c174, type: 3}
+  NE: {fileID: 21300000, guid: b438b068204e09443aa4665a86ba2502, type: 3}
+  NW: {fileID: 21300000, guid: 156181043535d11468a46749ba0c05df, type: 3}
+  SE: {fileID: 21300000, guid: bbb5135557be3654bba6a7c500a2afa4, type: 3}
+  SW: {fileID: 21300000, guid: 4ac5d038f6ebbcc4e8d8121bbaa8d47f, type: 3}
 --- !u!50 &1222248701
 Rigidbody2D:
   serializedVersion: 4
@@ -719,7 +719,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1334565f3d25633408fe4f7469dde56d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ac5d038f6ebbcc4e8d8121bbaa8d47f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -738,7 +738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222248699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.364, y: -0.511, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 990790016}
