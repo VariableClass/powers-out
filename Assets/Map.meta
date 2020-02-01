@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 2b3d97d2975b9c74b92240b7c3604916
+<<<<<<< Updated upstream:Assets/Map.meta
+guid: 5675afbdbca7c694785b37bb551eb11d
+=======
+guid: 88d42eabcd2fe564787e9cd9eff2ea60
+>>>>>>> Stashed changes:Assets/Controlles.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
