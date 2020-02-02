@@ -45,5 +45,6 @@ public class MusicManager : MonoBehaviour
     {
         StopMusic();
         audioSource.clip = audioClip;
+        PlayMusic();
     }
 }

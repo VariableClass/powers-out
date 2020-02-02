@@ -6,23 +6,25 @@ public class RadioFix : MonoBehaviour
 {
     private SpriteRenderer sprite;
     private GlobalGameData globalGameData;
+    private MusicManager music;
 
     public Sprite RadioNoBattery;
     public Sprite RadioWithBattery;
-
-
-    // Start is called before the first frame update
+    public AudioClip audioClip;
+    
     void Start()
     {
         // Get global game data
         var globalGameDataGameObject = GameObject.FindGameObjectWithTag("GlobalData");
         globalGameData = globalGameDataGameObject.GetComponent<GlobalGameData>();
 
+
+        var musicManagerObject = GameObject.FindGameObjectWithTag("Music");
+        music = musicManagerObject.GetComponent<MusicManager>();
+        
         sprite = GetComponent<SpriteRenderer>();
-
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (globalGameData.batteryCount.Count > 0)
@@ -30,12 +32,9 @@ public class RadioFix : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 sprite.sprite = RadioWithBattery;
+                globalGameData.radioFixed = true;
+                music.SetSong(audioClip);
             }
         }
-
-
-        //TODO: insert battery visually
-        //Good job message
-        //Change music
     }
 }
