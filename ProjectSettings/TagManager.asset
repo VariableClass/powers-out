@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GlobalData
   - Grid
+  - Music
   layers:
   - Default
   - TransparentFX

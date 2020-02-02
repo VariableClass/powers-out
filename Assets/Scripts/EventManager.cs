@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
-    private GlobalGameData globalGameData;
+    private MusicManager musicManager;
 
     private void Awake()
     {
-        var globalDataObject = GameObject.FindGameObjectWithTag("GlobalData");
-        globalGameData = globalDataObject.GetComponent<GlobalGameData>();
+        musicManager = GameObject.FindGameObjectWithTag("Music").GetComponent<MusicManager>();
     }
 
     public void LoadScene(string sceneName)
@@ -17,5 +16,5 @@ public class EventManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SetVolume(Slider slider) => globalGameData.SetVolume((int)slider.value);
+    public void SetVolume(Slider slider) => musicManager.SetVolume(slider.value);
 }
