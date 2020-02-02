@@ -965,7 +965,7 @@ MonoBehaviour:
   keyGotten: 0
   radioFixed: 0
   powerFixed: 0
-  bulbsCollected: 
+  bulbsCollected: 00000000000000000000000000000000
   bulbsInstalled: 0
   batteryCount: 0
   masterVolume: 0

@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2285411e7fc8fb74d891ff45428e5208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSpeed: 1
+  PlayerSpeed: 40
   Camera: {fileID: 519420031}
   NorthEast: {fileID: 21300000, guid: edeaf4cadcf94174bb01fbc78538712f, type: 3}
   NorthWest: {fileID: 21300000, guid: 7c461117302f7c9458b63be521021413, type: 3}
@@ -1699,7 +1699,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
