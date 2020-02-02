@@ -27,10 +27,10 @@ public class KeyCount : MonoBehaviour
         switch (globalGameData.keyGotten)
         {
             case true:
-                image.texture = KeyCount0;
+                image.texture = KeyCount1;
                 break;
             case false:
-                image.texture = KeyCount1;
+                image.texture = KeyCount0;
                 break;
 
             default:
