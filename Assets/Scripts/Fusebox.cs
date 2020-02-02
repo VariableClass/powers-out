@@ -60,7 +60,7 @@ public class Fusebox : MonoBehaviour
             spriteRenderer.sprite = candidateSprite;
         }
 
-        if(globalGameData.bulbsInstalled == globalGameData.bulbsCollected.Count)
+        if(globalGameData.bulbsInstalled == 4)
         {
             globalGameData.powerFixed = true;
         }
