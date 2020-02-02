@@ -26,7 +26,7 @@ public class BatteryCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (globalGameData.bulbsCollected)
+        switch (globalGameData.batteryCount)
         {
             case 0:
                 image.texture = BatteryCount0;

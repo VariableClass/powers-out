@@ -26,7 +26,7 @@ public class FuseCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (globalGameData.bulbsCollected)
+        switch (globalGameData.bulbsCollected.Count)
         {
             case 0:
                 image.texture = FuseCount0;

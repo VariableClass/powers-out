@@ -12,6 +12,7 @@ public class Fusebox : MonoBehaviour
     public Sprite FuseboxTwoFuses;
     public Sprite FuseboxThreeFuses;
     public Sprite FuseboxFourFuses;
+    public GameObject needKeyImage;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class Fusebox : MonoBehaviour
         if (!globalGameData.keyGotten)
         {
             candidateSprite = FuseboxClosed;
+            needKeyImage.SetActive(true);
         }
         else if (globalGameData.bulbsInstalled == 1)
         {
@@ -56,6 +58,11 @@ public class Fusebox : MonoBehaviour
         if (spriteRenderer.sprite != candidateSprite)
         {
             spriteRenderer.sprite = candidateSprite;
+        }
+
+        if(globalGameData.bulbsInstalled == globalGameData.bulbsCollected.Count)
+        {
+            globalGameData.powerFixed = true;
         }
     }
 }
