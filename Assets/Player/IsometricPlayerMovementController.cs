@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Tobii.Gaming;
 using UnityEngine;
 
 public class IsometricPlayerMovementController : MonoBehaviour
@@ -28,6 +29,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     public GameObject flashLight;
     public GameObject characterLight;
     public GlobalGameData globalData;
+    public Animator character_anim;
 
     #endregion
 
@@ -41,7 +43,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
     private void Awake()
     {
         // Get game object components
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        character_anim = GetComponentInChildren<Animator>();
         globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalGameData>();
     }
 
@@ -107,31 +110,70 @@ public class IsometricPlayerMovementController : MonoBehaviour
         }
     }
 
-    private Sprite GetSpriteForBearing(Bearing bearing)
+    private int GetSpriteForBearing(Bearing bearing)
     {
         if (bearing == Bearing.NorthEast)
         {
-            return NorthEast;
+            //return NorthEast;
+            return 2;
         }
         else if (bearing == Bearing.NorthWest)
         {
-            return NorthWest;
+            //return NorthWest;
+            return 1;
         }
         else if (bearing == Bearing.SouthEast)
         {
-            return SouthEast;
+            //return SouthEast;
+            return 4;
         }
         else
         {
-            return SouthWest;
+            //return SouthWest;
+            return 3;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(0))
+        var temp = TobiiAPI.GetUserPresence();
+        if (temp.IsUserPresent())
         {
+            character_anim.SetBool("Walking", true);
+            // Get mouse position
+            var eyePosition = Camera.ScreenToWorldPoint(TobiiAPI.GetGazePoint().Screen);
+
+            // Determine the character heading from the character's current position and the mouse position
+            var heading = GetHeading(eyePosition, transform.position);
+
+            // Get an isometric heading for the given heading
+            var isometricHeading = GetIsometricHeading(heading.Value);
+
+            // If the character is at the cursor position, do not move
+            if (!isometricHeading.HasValue)
+            {
+                character_anim.SetBool("Walking", false);
+                return;
+            }
+
+            // Get the compass bearing for the heading
+            var bearing = GetBearing(heading.Value);
+
+            // Set the appropriate character sprite for the given bearing
+            //spriteRenderer.sprite = GetSpriteForBearing(bearing);
+            character_anim.SetInteger("Direction", GetSpriteForBearing(bearing));
+
+            flashLight.transform.up = isometricHeading.Value;
+            characterLight.transform.up = isometricHeading.Value;
+            characterLight.transform.Rotate(new Vector3(0, 0, 1), 180);
+
+            // Move the character
+            transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            character_anim.SetBool("Walking", true);
             // Get mouse position
             var mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -144,6 +186,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
             // If the character is at the cursor position, do not move
             if (!isometricHeading.HasValue)
             {
+                character_anim.SetBool("Walking", false);
                 return;
             }
 
@@ -151,7 +194,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
             var bearing = GetBearing(heading.Value);
 
             // Set the appropriate character sprite for the given bearing
-            spriteRenderer.sprite = GetSpriteForBearing(bearing);
+            //spriteRenderer.sprite = GetSpriteForBearing(bearing);
+            character_anim.SetInteger("Direction", GetSpriteForBearing(bearing));
 
             flashLight.transform.up = isometricHeading.Value;
             characterLight.transform.up = isometricHeading.Value;
@@ -159,6 +203,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
             // Move the character
             transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
+        }
+        else
+        {
+            character_anim.SetBool("Walking", false);
         }
     }
     #endregion

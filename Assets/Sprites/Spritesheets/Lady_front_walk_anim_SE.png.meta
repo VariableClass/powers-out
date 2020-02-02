@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 820d6392ca4cae54c96cf8db8a94d5b8
+guid: b6e6fec60bfe9c045af2ef81d78b0de1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2110807662950450481
-    second: Lady_front_walk_anim_0
+      213: -4247923670741767608
+    second: Lady_front_walk_anim_SE_0
   - first:
-      213: -3554966172093914716
-    second: Lady_front_walk_anim_1
+      213: 7153021707539127451
+    second: Lady_front_walk_anim_SE_1
   - first:
-      213: -2782990586465380499
-    second: Lady_front_walk_anim_2
+      213: -2957877169228869384
+    second: Lady_front_walk_anim_SE_2
   - first:
-      213: -6503850342832790645
-    second: Lady_front_walk_anim_3
+      213: 3518300015602491760
+    second: Lady_front_walk_anim_SE_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,73 +134,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lady_front_walk_anim_0
+      name: Lady_front_walk_anim_SE_0
       rect:
         serializedVersion: 2
-        x: 185
-        y: 45
-        width: 510
-        height: 920
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 135855bc2681b4d10800000000000000
-      internalID: 2110807662950450481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lady_front_walk_anim_1
-      rect:
-        serializedVersion: 2
-        x: 1209
-        y: 15
-        width: 510
-        height: 950
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1efcbf9193aaec0800000000000000
-      internalID: -3554966172093914716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lady_front_walk_anim_2
-      rect:
-        serializedVersion: 2
-        x: 2233
-        y: 45
-        width: 512
-        height: 920
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6799787ec4d069d0800000000000000
-      internalID: -2782990586465380499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lady_front_walk_anim_3
-      rect:
-        serializedVersion: 2
-        x: 3253
+        x: 331
         y: 71
         width: 512
         height: 896
@@ -211,8 +148,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b832623729eadb5a0800000000000000
-      internalID: -6503850342832790645
+      spriteID: 84aa67c8de75c05c0800000000000000
+      internalID: -4247923670741767608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lady_front_walk_anim_SE_1
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 45
+        width: 512
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c178c3853a44360800000000000000
+      internalID: 7153021707539127451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lady_front_walk_anim_SE_2
+      rect:
+        serializedVersion: 2
+        x: 2377
+        y: 15
+        width: 510
+        height: 950
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f010e6d26283f6d0800000000000000
+      internalID: -2957877169228869384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lady_front_walk_anim_SE_3
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 45
+        width: 510
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071ec33393383d030800000000000000
+      internalID: 3518300015602491760
       vertices: []
       indices: 
       edges: []

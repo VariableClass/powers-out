@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 820d6392ca4cae54c96cf8db8a94d5b8
+guid: 86fde656755882f4b87575f7590f1d15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2110807662950450481
-    second: Lady_front_walk_anim_0
+      213: 449449106295793639
+    second: lady_back_walk_anim_ NW_0
   - first:
-      213: -3554966172093914716
-    second: Lady_front_walk_anim_1
+      213: -912850025277693618
+    second: lady_back_walk_anim_ NW_1
   - first:
-      213: -2782990586465380499
-    second: Lady_front_walk_anim_2
+      213: -8834754342013775665
+    second: lady_back_walk_anim_ NW_2
   - first:
-      213: -6503850342832790645
-    second: Lady_front_walk_anim_3
+      213: -2167442143895106575
+    second: lady_back_walk_anim_ NW_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,55 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lady_front_walk_anim_0
+      name: lady_back_walk_anim_ NW_0
       rect:
         serializedVersion: 2
-        x: 185
-        y: 45
-        width: 510
-        height: 920
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 135855bc2681b4d10800000000000000
-      internalID: 2110807662950450481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lady_front_walk_anim_1
-      rect:
-        serializedVersion: 2
-        x: 1209
-        y: 15
-        width: 510
-        height: 950
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1efcbf9193aaec0800000000000000
-      internalID: -3554966172093914716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lady_front_walk_anim_2
-      rect:
-        serializedVersion: 2
-        x: 2233
-        y: 45
+        x: 193
+        y: 11
         width: 512
-        height: 920
+        height: 984
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6799787ec4d069d0800000000000000
-      internalID: -2782990586465380499
+      spriteID: 7e7a065b493cc3600800000000000000
+      internalID: 449449106295793639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lady_front_walk_anim_3
+      name: lady_back_walk_anim_ NW_1
       rect:
         serializedVersion: 2
-        x: 3253
-        y: 71
+        x: 1217
+        y: 37
         width: 512
-        height: 896
+        height: 958
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +169,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b832623729eadb5a0800000000000000
-      internalID: -6503850342832790645
+      spriteID: e41ed1e0db7e453f0800000000000000
+      internalID: -912850025277693618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_back_walk_anim_ NW_2
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 69
+        width: 512
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0dd660cb5a46580800000000000000
+      internalID: -8834754342013775665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lady_back_walk_anim_ NW_3
+      rect:
+        serializedVersion: 2
+        x: 3263
+        y: 37
+        width: 512
+        height: 958
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbcbed8ad2bbe1e0800000000000000
+      internalID: -2167442143895106575
       vertices: []
       indices: 
       edges: []
