@@ -36,6 +36,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     #region Member Variables
 
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rigidBody;
 
     #endregion
 
@@ -44,6 +45,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     {
         // Get game object components
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        rigidBody = GetComponent<Rigidbody2D>();
         character_anim = GetComponentInChildren<Animator>();
         globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalGameData>();
     }
@@ -134,6 +136,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -169,7 +175,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
             characterLight.transform.Rotate(new Vector3(0, 0, 1), 180);
 
             // Move the character
-            transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
+            rigidBody.velocity = isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed;
         }
         else if (Input.GetMouseButton(0))
         {
@@ -202,11 +208,12 @@ public class IsometricPlayerMovementController : MonoBehaviour
             characterLight.transform.Rotate(new Vector3(0, 0, 1), 180);
 
             // Move the character
-            transform.Translate(isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed);
+            rigidBody.velocity = isometricHeading.Value * Time.fixedDeltaTime * PlayerSpeed;
         }
         else
         {
             character_anim.SetBool("Walking", false);
+            rigidBody.velocity = new Vector2();
         }
     }
     #endregion
