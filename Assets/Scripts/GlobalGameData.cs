@@ -11,7 +11,7 @@ public class GlobalGameData : MonoBehaviour
     public bool powerFixed;
     public List<int> bulbsCollected;
     public int bulbsInstalled;
-    public int batteryCount;
+    public List<int> batteryCount;
 
     [Range(0, 50)]
     public int masterVolume;
@@ -21,6 +21,7 @@ public class GlobalGameData : MonoBehaviour
         DontDestroyOnLoad(this);
         print("init global data");
         bulbsCollected = new List<int>();
+        batteryCount = new List<int>();
     }
 
     // Start is called before the first frame update
