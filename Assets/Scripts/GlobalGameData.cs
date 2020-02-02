@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ public class GlobalGameData : MonoBehaviour
     public bool keyGotten;
     public bool radioFixed;
     public bool powerFixed;
-    public int bulbsCollected;
+    public List<int> bulbsCollected;
     public int bulbsInstalled;
     public int batteryCount;
 
@@ -21,7 +22,7 @@ public class GlobalGameData : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         print("init global data");
-        bulbsCollected = 0;
+        bulbsCollected = new List<int>();
     }
 
     // Start is called before the first frame update
