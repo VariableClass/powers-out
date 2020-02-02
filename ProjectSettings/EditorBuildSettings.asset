@@ -9,21 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d668cfdfa06434141beb6fd6dea2633c
   - enabled: 1
-    path: Assets/Scenes/MainGameScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Nokia-snake.unity
-    guid: 36915ee8652830343ac9c058cfde011b
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d668cfdfa06434141beb6fd6dea2633c
-  - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
     guid: d41d918ff028ad14380a489232c9c840
+  - enabled: 1
+    path: Assets/Scenes/MainGameScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Fusebox-fix.unity
     guid: 9e66d3dad0d61214e98791227c37541e
   - enabled: 1
     path: Assets/Scenes/Lockpicker.unity
     guid: ced87807cc852424fac0f1c53d381d14
+  - enabled: 1
+    path: Assets/Scenes/Radio-fix.unity
+    guid: ab9ec69e850ae3743817e8f804eff9ed
   m_configObjects: {}
