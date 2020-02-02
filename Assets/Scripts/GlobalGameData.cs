@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-
 
 public class GlobalGameData : MonoBehaviour
 {
@@ -34,11 +32,6 @@ public class GlobalGameData : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-    }
-
-    public void SetVolume(int value)
-    {
-        AudioListener.volume = (float)value;
     }
 }
 
