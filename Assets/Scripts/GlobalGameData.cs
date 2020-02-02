@@ -12,6 +12,7 @@ public class GlobalGameData : MonoBehaviour
     public bool powerFixed;
     public int bulbsCollected;
     public int bulbsInstalled;
+    public int batteryCount;
 
     [Range(0, 50)]
     public int masterVolume;
