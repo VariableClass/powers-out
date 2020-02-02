@@ -35,7 +35,7 @@ public class FuseScrew : MonoBehaviour
         var globalGameDataGameObject = GameObject.FindGameObjectWithTag("GlobalData");
         globalGameData = globalGameDataGameObject.GetComponent<GlobalGameData>();
 
-        if (globalGameData.bulbsCollected.Count < BulbId)
+        if (!globalGameData.keyGotten || globalGameData.bulbsCollected.Count < BulbId)
         {
             Destroy(gameObject);
             return;
